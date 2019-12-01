@@ -272,10 +272,10 @@ scrot_sel_and_grab_image(void)
               XDrawRectangle(disp, root, gc, rect_x, rect_y, rect_w, rect_h);
             }
 
-            rect_x = rx;
-            rect_y = ry;
-            rect_w = ev.xmotion.x - rect_x;
-            rect_h = ev.xmotion.y - rect_y;
+            rect_x = rx -1;
+            rect_y = ry -1;
+            rect_w = ev.xmotion.x - rect_x +1;
+            rect_h = ev.xmotion.y - rect_y +1;
 
             /* Change the cursor to show we're selecting a region */
             if (rect_w < 0 && rect_h < 0)
